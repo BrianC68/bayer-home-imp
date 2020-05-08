@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load wagtailimages_tags wagtailcore_tags %}
+{% block breadcrumb %}
+{% include 'includes/breadcrumb.html' %}
+{% endblock breadcrumb %}
+{% block content %}
+<div id="imageGalleryControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        {% for img in images  %}
+        {% image img fill-1000x600 as carousel_image %}
+        <div class="carousel-item{% if forloop.first %} active{% endif %}">
+        <img src="{{carousel_image.url}}" class="d-block w-100" alt="{{carousel_image.alt}}"></div>
+    {% endfor %}
+    </div>
+<a class="carousel-control-prev" href="#imageGalleryControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#imageGalleryControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+<div class="text-center mt-3">
+    <a href="{% pageurl page.get_parent %}" class="btn btn-primary btn-lg">Back to Gallery Index</a>
+</div>
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block breadcrumb %}
+{% include 'includes/breadcrumb.html' %}
+{% endblock breadcrumb %}
+{% block content %}
+<div class="row">
+    <div class="col-md-6 mb-3">
+        {% image page.contact_page_image fill-500x298 as img %}
+        <picture>
+            <img src="{{ img.url }}" alt="{{ img.alt }}" class="contact-image" style="width: 100%; height: auto;">
+        </picture>
+    </div>
+    <div class="col-md-6">
+        <div class="green-text">{{ page.thank_you_text|richtext }}</div>
+    </div>
+</div>    
+{% endblock content %}
+    

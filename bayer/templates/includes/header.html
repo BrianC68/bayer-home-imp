@@ -1,0 +1,30 @@
+{% load static menu_tags %}
+{% get_menu 'header' as navigation %}
+<!-- Start Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="{% static 'images/nav-logo-150x107.jpg' %}" alt="Bayer Home Improvements, LLC">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                {% if settings.site_settings.SocialMediaSettings.facebook %}
+                <li class="nav-item text-center">
+                    <a href="{{ settings.site_settings.SocialMediaSettings.facebook }}" class="nav-link">
+                    <i class="fab fa-facebook-square fa-2x"></i></a>
+                </li>{% endif %}
+                {% for item in navigation.menu_items.all %}
+                <li class="nav-item text-center">
+                    <a class="nav-link" href="{{item.link}}"
+                    {% if item.open_in_new_tab %} target="_blank"{% endif %}>
+                        {{item.title}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+  </nav>
+<!-- End Navigation -->

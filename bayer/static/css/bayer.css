@@ -1,0 +1,296 @@
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.green-text {
+    color: green;
+    font-size: 24px;
+}
+
+@media (max-width:991px) {
+    .nav-item:hover {
+        background-color: #afafaf;
+        border-radius: 5px;
+    }
+}
+
+.btn-success {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.btn-primary {
+    background-color:rgb(0, 0, 226);
+    border-color: rgb(0, 0, 226);
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.btn-primary:hover {
+    background-color: darkblue;
+    border-color: darkblue;
+}
+
+.btn-primary:active {
+    background-color:rgb(0, 0, 226);
+    border-color: rgb(0, 0, 226);
+}
+
+.btn-primary:active:focus {
+    background-color: blue !important;
+    border-color: darkblue !important;
+    box-shadow: none !important;
+}
+
+.btn-light {
+    background-color: #cccccc;
+    border-color: #afafaf;
+    color: black;
+    text-decoration: none !important;
+}
+
+.btn-light:hover {
+    background-color:#575757;
+    border-color: #afafaf;
+    color: #cccccc;
+}
+
+.btn-light:active {
+    background-color: #cccccc;
+    border-color: #afafaf;
+    color: black;
+}
+
+.btn-light:active:focus {
+    background-color: #cccccc;
+    border-color: #afafaf;
+    color: black;
+    /* box-shadow: none !important; */
+}
+
+.btn-dark {
+    background-color:#006300;
+    border-color: #006300;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.btn-dark:hover {
+    background-color: green;
+    border-color: green;
+}
+
+.btn-dark:active {
+    background-color:#006300;
+    border-color: #006300;
+}
+
+.btn-dark:active:focus {
+    background-color: #006300 !important;
+    border-color: #006300 !important;
+    box-shadow: none !important;
+}
+
+.btn:hover {
+    animation: enable 0.3s linear;
+}
+
+@keyframes enable {
+    0% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.card-link {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2.1px;
+    color: green !important;
+    vertical-align: bottom;
+}
+
+.card-link:hover {
+    color: #006300 !important;
+}
+
+.contact-image {
+    border: 1px solid #cccccc;
+    box-shadow: 3px 3px 8px #cccccc;
+}
+
+.navbar-nav {
+    font-size: 24px;
+}
+
+/* Override Bootstrap input focus color */
+.form-control:focus {
+    border-color: green;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, .25);
+}
+
+/* .card {
+    border: 1px solid blue;
+} */
+
+.bc-image {
+    background: linear-gradient(180.43deg, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0.50) 100%), url('/static/images/logo-1241x890.jpg');
+}
+
+@media (min-width: 768px) {
+    .bc-image {
+        background-position: -50px -150px;
+        }
+}
+
+@media (max-width: 767px) {
+    .bc-image {
+        background: linear-gradient(180.43deg, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0.50) 100%), url('/static/images/logo-800x573.jpg');
+        background-position: -50px -140px;
+    }
+}
+@media (max-width: 360px) {
+    .bc-image{
+        background: linear-gradient(180.43deg, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0.50) 100%), url('/static/images/logo-800x573.jpg');
+        background-position: -50px -160px;
+    }
+}
+
+.footer-cta {
+    background-color: #575757;
+    background-image: url("/static/images/footer/shley-tree-1.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    color: #cccccc;
+    padding: 80px 0px;
+}
+
+.footer {
+    background-color: #003300;
+    padding: 80px 0px;
+}
+
+@media (max-width: 500px) {
+    .footer {
+    padding: 40px 0px;
+    }
+}
+
+.footer-title {
+    color: #afafaf;
+    text-transform: uppercase;
+    font-size: smaller;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.footer-copy {
+    font-size: 12px;
+}
+
+a:link, a:visited {
+    color: black;
+    text-decoration: underline;
+}
+
+a:hover, a:active {
+    color: black;
+    text-decoration: none;
+}
+
+a.footer-link:link, a.footer-link:visited {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+a.footer-link:hover, a.footer-link:active {
+    color: white;
+    text-decoration: none;
+}
+
+a.nav-link:link, a.nav-link:visited {
+    text-decoration: none;
+    color: green !important;
+}
+
+a.nav-link:hover, a.nav-link:active {
+    text-decoration: none;
+    color: rgb(0, 71, 0) !important;
+    animation: enable 0.3s linear;
+}
+
+@media (max-width: 992px) {
+    .nav-item {
+        border-bottom: 1px solid #575757;
+        /* border-top: 1px solid #575757; */
+        border-radius: 5px;
+    }
+}
+
+.contact-icon {
+    color: #006300;
+}
+
+.cta-block {
+    box-shadow: 1px 1px 6px green;
+    /* border: 1px solid green; */
+    height: 150px;
+}
+
+.img-txt-content-left {
+    background-color: #afafaf;
+    position: absolute;
+    top: 300px;
+    width: 500px;
+    height: 300px;
+    box-shadow: -2px 2px 6px black;
+}
+
+@media (max-width: 992px) {
+    .img-txt-content-left {
+        position: relative;
+        top: 0px;
+        width: 100%;
+        box-shadow: none;
+    }
+}
+
+.img-txt-content-right {
+    background-color: #afafaf;
+    position: absolute;
+    top: 300px;
+    left: 590px;
+    width: 500px;
+    height: 300px;
+    box-shadow: 2px 2px 6px black;
+}
+
+@media (max-width: 1200px) {
+    .img-txt-content-right {
+        position: absolute;
+        left: 410px;
+    }
+}
+
+@media (max-width: 992px) {
+    .img-txt-content-right {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+    }
+}

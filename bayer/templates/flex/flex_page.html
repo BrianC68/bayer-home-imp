@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags %}
+{% block breadcrumb %}
+{% include 'includes/breadcrumb.html' %}
+{% endblock breadcrumb %}
+{% block content %}
+    <div class="row mx-2">
+        <div class="col-md-8 offset-md-2">
+        {% for block in page.body  %}
+            {% include_block block %}
+        {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
+    

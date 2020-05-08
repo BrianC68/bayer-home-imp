@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block breadcrumb %}
+{% include 'includes/breadcrumb.html' %}
+{% endblock breadcrumb %}
+{% block content %}
+<div class="row mb-3">
+    <div class="col-lg-6 mt-2 mt-md-0">
+        {% image page.service_image fill-500x300 as img %}
+        <img src="{{ img.url }}" class="img-fluid" alt="{{ img.alt }}">
+    </div>
+    <div class="col-lg-6">
+        <p>{{ page.description|richtext }}</p>
+        {% if page.internal_page %}
+            <a href="{{ page.internal_page.url}}" class="btn btn-success btn-lg">{{ page.button_text }}</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}
+    

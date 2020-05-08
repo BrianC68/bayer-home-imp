@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load wagtailimages_tags %}
+{% block breadcrumb %}
+{% include 'includes/breadcrumb.html' %}
+{% endblock breadcrumb %}
+{% block content %}
+<div class="row mt-4">
+    {% for gallery in galleries %}
+    <div class="col-md-6">
+        <div class="card mb-3 text-center">
+            {% image gallery.gallery_listing_page_image fill-500x300 as card_img %}
+            <img src="{{card_img.url}}" class="card-img-top" alt="{{card_img.alt}}">
+            <div class="card-body">
+            <h5 class="card-title">{{gallery.title}}</h5>
+            <p class="card-text">{{gallery.gallery_description}}</p>
+            <a href="{{gallery.url}}" class="btn btn-primary btn-lg">View Gallery</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
+    

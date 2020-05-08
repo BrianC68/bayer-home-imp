@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load wagtailimages_tags %}
+{% block breadcrumb %}
+{% include 'includes/breadcrumb.html' %}
+{% endblock breadcrumb %}
+{% block content %}
+<div><h2>{{page.subtitle}}</h2></div>
+<div class="row mt-4">
+    {% for service in services %}
+    <div class="col-md-6">
+        <div class="card mb-3 text-center">
+            {% image service.service_image fill-500x300 as card_img %}
+            <img src="{{card_img.url}}" class="card-img-top" alt="{{card_img.alt}}">
+            <div class="card-body">
+            <h5 class="card-title">{{service.title}}</h5>
+            <p class="card-text">{{service.card_description}}</p>
+            <a href="{{service.url}}" class="btn btn-primary btn-lg">Learn More...</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
+    

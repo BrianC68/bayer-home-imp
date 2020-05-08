@@ -1,0 +1,26 @@
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags %}
+<!-- Image and text block -->
+<div class="py-4">
+    <div class="mb-md-5 mb-0 justify-content-center">
+        <div class="col-sm-12">
+            <div>
+                <div class="text-{{self.image_alignment}}">
+                    <picture>
+                        {% image self.image fill-752x552 as img %}
+                        <img class="img-fluid" src="{{ img.url }}" alt="{{ img.alt }}">
+                    </picture>
+                </div>
+                <div class="{% if self.image_alignment == 'right'%}img-txt-content-left{% else %}img-txt-content-right{% endif %} p-sm-5 p-3">
+                    <h3>{{ self.title }}</h3>
+                    {% if self.text %}
+                    <p>{{ value.text }}</p>
+                    {% endif %}
+                    {% if self.link.url %}<a href="{{ value.link.url }}" class="btn btn-success btn-lg">{{ self.link.link_text }}</a>{% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Image and text block -->
+
