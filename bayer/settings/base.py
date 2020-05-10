@@ -136,7 +136,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Chicago'
 
 USE_I18N = True
 
@@ -175,4 +175,4 @@ WAGTAIL_SITE_NAME = "Bayer Home Improvements, LLC"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'https://brianc68.pythonanywhere.com'
+BASE_URL = 'https://www.bayerhomeimprovements.com'
