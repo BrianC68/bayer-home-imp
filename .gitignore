@@ -6,6 +6,7 @@ bayer/settings/production.py
 Dockerfile
 media/
 manage.py
+sent_emails/
 
 ##############################
 
