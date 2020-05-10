@@ -12,7 +12,7 @@ from streams import blocks
 class HomePage(Page):
     
     parent_page_types = ['wagtailcore.Page']
-    subpage_types = ['flex.FlexPage', 'services.ServiceListingPage', 'contact.ContactPage']
+    subpage_types = ['flex.FlexPage', 'services.ServiceListingPage', 'contact.ContactPage', 'gallery.GalleryListingPage']
     max_count = 1
     lead_text = models.CharField(
         max_length=250, 

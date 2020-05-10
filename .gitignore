@@ -4,6 +4,8 @@
 .vscode/
 bayer/settings/production.py
 Dockerfile
+media/
+manage.py
 
 ##############################
 
