@@ -1,11 +1,6 @@
 {% extends "base.html" %}
-
 {% block body_class %}template-404{% endblock %}
-
 {% block content %}
-{% block breadcrumb %}
-{% include 'includes/breadcrumb.html' %}
-{% endblock breadcrumb %}
 <div class="row mt-4 align-items-center">
     <div class="col-md-6 text-center mb-3 mb-md-0">
         <span class="page-not-found-icon"><i class="fas fa-exclamation-circle fa-7x"></i></span>
@@ -16,6 +11,4 @@
         <p>Please use our navigation menu to find what you are looking for.</p>
     </div>
 </div>
-
-    
 {% endblock %}
