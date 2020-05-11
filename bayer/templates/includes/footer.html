@@ -44,19 +44,19 @@
               <div class="footer-title pb-2">Social Media</div>
             {% if settings.site_settings.SocialMediaSettings.facebook %}
                 <a href="{{ settings.site_settings.SocialMediaSettings.facebook }}" class="footer-link mx-1">
-                <i class="fab fa-facebook-square fa-2x"></i></a>{% endif %}
+                <i class="fab fa-facebook-square fa-2x"></i><span class="sr-only">Company Facebook Page</span></a>{% endif %}
             {% if settings.site_settings.SocialMediaSettings.twitter %}
                 <a href="{{ settings.site_settings.SocialMediaSettings.twitter }}" class="footer-link mx-1">
-                <i class="fab fa-twitter-square fa-2x"></i></a>{% endif %}
+                <i class="fab fa-twitter-square fa-2x"></i><span class="sr-only">Company Twitter Page</span></a>{% endif %}
             {% if settings.site_settings.SocialMediaSettings.instagram %}
                 <a href="{{ settings.site_settings.SocialMediaSettings.instagram }}" class="footer-link mx-1">
-                <i class="fab fa-instagram-square fa-2x"></i></a>{% endif %}
+                <i class="fab fa-instagram-square fa-2x"></i><span class="sr-only">Company Instagram Page</span></a>{% endif %}
             {% if settings.site_settings.SocialMediaSettings.youtube %}
                 <a href="{{ settings.site_settings.SocialMediaSettings.youtube }}" class="footer-link mx-1">
-                <i class="fab fa-youtube-square fa-2x"></i></a>{% endif %}
+                <i class="fab fa-youtube-square fa-2x"></i><span class="sr-only">Company YouTube Page</span></a>{% endif %}
             {% if settings.site_settings.SocialMediaSettings.linkedin %}
                 <a href="{{ settings.site_settings.SocialMediaSettings.linkedin }}" class="footer-link mx-1">
-                <i class="fab fa-linkedin fa-2x"></i></a>{% endif %}
+                <i class="fab fa-linkedin fa-2x"></i><span class="sr-only">Company LinkedIn Page</span></a>{% endif %}
         </div>
       </div>
       <div class="footer-copy">&copy; {% now "Y" %}

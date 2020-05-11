@@ -14,7 +14,7 @@
                 {% if settings.site_settings.SocialMediaSettings.facebook %}
                 <li class="nav-item text-center">
                     <a href="{{ settings.site_settings.SocialMediaSettings.facebook }}" class="nav-link">
-                    <i class="fab fa-facebook-square fa-2x"></i></a>
+                    <i class="fab fa-facebook-square fa-2x"></i><span class=sr-only>Company Facebook Page</span></a>
                 </li>{% endif %}
                 {% for item in navigation.menu_items.all %}
                 <li class="nav-item text-center">

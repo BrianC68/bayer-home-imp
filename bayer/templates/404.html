@@ -3,7 +3,19 @@
 {% block body_class %}template-404{% endblock %}
 
 {% block content %}
-    <h1>Page not found</h1>
+{% block breadcrumb %}
+{% include 'includes/breadcrumb.html' %}
+{% endblock breadcrumb %}
+<div class="row mt-4 align-items-center">
+    <div class="col-md-6 text-center mb-3 mb-md-0">
+        <span class="page-not-found-icon"><i class="fas fa-exclamation-circle fa-7x"></i></span>
+    </div>
+    <div class="col-md-6 page-not-found-text text-center text-md-left">
+        <h2>Page Not Found</h1>
+        <h3>Sorry, we could not locate the resource you requested.</h2>
+        <p>Please use our navigation menu to find what you are looking for.</p>
+    </div>
+</div>
 
-    <h2>Sorry, this page could not be found.</h2>
+    
 {% endblock %}

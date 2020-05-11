@@ -294,3 +294,21 @@ a.nav-link:hover, a.nav-link:active {
         box-shadow: none;
     }
 }
+
+.fa-exclamation-circle {
+    color: rgb(0, 0, 196);
+}
+
+.page-not-found-icon {
+    font-size: 48px;
+}
+
+.page-not-found-text {
+    color: #006300;
+}
+
+@media (max-width:992px) {
+    .page-not-found-icon {
+        font-size: 36px;
+    }
+}
