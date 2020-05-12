@@ -14,12 +14,15 @@ class HomePage(Page):
     parent_page_types = ['wagtailcore.Page']
     subpage_types = ['flex.FlexPage', 'services.ServiceListingPage', 'contact.ContactPage', 'gallery.GalleryListingPage']
     max_count = 1
+    keywords = models.TextField(
+        blank=True,
+        help_text='Optional comma separated list of keywords to describe the content of this page.'
+    )
     lead_text = models.CharField(
         max_length=250, 
         blank=True,
         help_text='Subheading text under the banner title, 250 Chars max length.'
     )
-
     button = models.ForeignKey(
         'wagtailcore.Page',
         blank=True,
@@ -47,9 +50,9 @@ class HomePage(Page):
         )),
         ], null=True, blank=True
         )
-    
 
     content_panels = Page.content_panels + [
+        FieldPanel('keywords'),
         FieldPanel('lead_text'),
         FieldPanel('button_text'),
         PageChooserPanel('button'),

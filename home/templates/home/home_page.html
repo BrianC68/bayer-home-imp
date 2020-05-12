@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load wagtailimages_tags wagtailcore_tags %}
+{% block keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endblock keywords %}
 {% block extra_css %}
 <style>
     @media (min-width: 501px) {
