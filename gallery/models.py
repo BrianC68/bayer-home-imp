@@ -18,7 +18,7 @@ class GalleryListingPage(Page):
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
-        context['galleries'] = GalleryPage.objects.all()
+        context['galleries'] = GalleryPage.objects.live().public()
         return context
 
    
