@@ -84,6 +84,15 @@ class ContactSettings(BaseSetting):
 
 
 @register_setting
+class ServiceAreaSettings(BaseSetting):
+
+    counties_served = models.TextField(
+        blank=True,
+        help_text='List of service area counties.'
+    )
+
+
+@register_setting
 class SocialMediaSettings(BaseSetting):
 
     facebook = models.URLField(

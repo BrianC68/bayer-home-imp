@@ -25,22 +25,29 @@
 <footer class="text-light text-md-left text-center footer">
     <div class="container text-center">
       <div class="row mx-lg-n3">
-        <div class="px-lg-3 py-3 col-lg-4 col-md-6 col-sm-6 text-center">
+        <div class="px-lg-3 py-3 col-lg-3 col-md-6 col-sm-6 text-center">
           <div class="footer-title pb-2">Links</div>
             {% for item in nav.menu_items.all %}
               <a class="d-block footer-link" href="{{ item.link }}" {% if item.open_in_new_tab %}target="_blank"{% endif %}>
                 {{ item.title }}
               </a>
             {% endfor %}
+            <!-- <hr class="w-100 bg-light d-block d-sm-none"> -->
         </div>
-        <div class="px-lg-3 py-3 col-lg-4 col-md-6 col-sm-6 text-center">
+        <div class="px-lg-3 py-3 col-lg-3 col-md-6 col-sm-6 text-center">
             <div class="footer-title pb-2">Contact Us</div>
             {% with phone=settings.site_settings.ContactSettings.contact_phone email=settings.site_settings.ContactSettings.contact_email %}
             {% if phone %}<div style="font-size: 20px;">Phone: <a href="tel:1-{{phone}}" class="footer-link">{{phone}}</a></div>{% endif %}
             {% if email %}<div style="font-size: 20px;">Email: <a href="mailto:{{email}}" class="footer-link">Brandon Bayer</a></div>{% endif %}
             {% endwith %}
+            <!-- <hr class="w-100 bg-light d-block d-sm-none"> -->
         </div>
-        <div class="px-lg-3 py-3 col-lg-4 col-md-12 col-sm-12 text-center">
+        <div class="px-lg-3 py-3 col-lg-3 col-md-6 col-sm-6 text-center">
+            <div class="footer-title pb-2">Service Area</div>
+            {% if settings.site_settings.ServiceAreaSettings.counties_served %}<span style="font-size: 22px;">{{ settings.site_settings.ServiceAreaSettings.counties_served }}</span>{% endif %}
+            <!-- <hr class="w-100 bg-light d-block d-sm-none"> -->
+        </div>
+        <div class="px-lg-3 py-3 col-lg-3 col-md-6 col-sm-6 text-center">
               <div class="footer-title pb-2">Social Media</div>
             {% if settings.site_settings.SocialMediaSettings.facebook %}
                 <a href="{{ settings.site_settings.SocialMediaSettings.facebook }}" class="footer-link mx-1">

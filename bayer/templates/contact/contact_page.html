@@ -7,6 +7,7 @@
 <div class="row mb-md-4">
     <div class="col">
         <p>{{ page.intro_text|richtext }}</p>
+        <p>{% if settings.site_settings.ServiceAreaSettings.counties_served %}Serving {{ settings.site_settings.ServiceAreaSettings.counties_served }}.{% endif %}</p>
     </div>
 </div>
 <div class="row">
