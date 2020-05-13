@@ -37,14 +37,14 @@
         <div class="px-lg-3 py-3 col-lg-3 col-md-6 col-sm-6 text-center">
             <div class="footer-title pb-2">Contact Us</div>
             {% with phone=settings.site_settings.ContactSettings.contact_phone email=settings.site_settings.ContactSettings.contact_email %}
-            {% if phone %}<div style="font-size: 20px;">Phone: <a href="tel:1-{{phone}}" class="footer-link">{{phone}}</a></div>{% endif %}
-            {% if email %}<div style="font-size: 20px;">Email: <a href="mailto:{{email}}" class="footer-link">Brandon Bayer</a></div>{% endif %}
+            {% if phone %}<span style="font-size: 22px; color: #cccccc;">Phone:</span> <a href="tel:1-{{phone}}" class="footer-link">{{phone}}</a>{% endif %}<br />
+            {% if email %}<span style="font-size: 22px; color: #cccccc;">Email:</span> <a href="mailto:{{email}}" class="footer-link">Brandon Bayer</a>{% endif %}
             {% endwith %}
             <!-- <hr class="w-100 bg-light d-block d-sm-none"> -->
         </div>
         <div class="px-lg-3 py-3 col-lg-3 col-md-6 col-sm-6 text-center">
             <div class="footer-title pb-2">Service Area</div>
-            {% if settings.site_settings.ServiceAreaSettings.counties_served %}<span style="font-size: 22px;">{{ settings.site_settings.ServiceAreaSettings.counties_served }}</span>{% endif %}
+            {% if settings.site_settings.ServiceAreaSettings.counties_served %}<span style="font-size: 22px; color: #cccccc">{{ settings.site_settings.ServiceAreaSettings.counties_served }}</span>{% endif %}
             <!-- <hr class="w-100 bg-light d-block d-sm-none"> -->
         </div>
         <div class="px-lg-3 py-3 col-lg-3 col-md-6 col-sm-6 text-center">
