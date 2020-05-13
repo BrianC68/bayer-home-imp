@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.cache import cache
+from django.core.cache.utils import make_template_fragment_key
 from django_extensions.db.fields import AutoSlugField
 
 from wagtail.core.models import Collection, Page
@@ -65,3 +67,8 @@ class GalleryPage(Page):
         context = super().get_context(request, *args, **kwargs)
         context['images'] = Image.objects.filter(collection=self.gallery_collection)
         return context
+
+    def save(self, *args, **kwargs):
+        key = make_template_fragment_key('gallery_listing')
+        cache.delete(key)
+        return super().save(*args, **kwargs)

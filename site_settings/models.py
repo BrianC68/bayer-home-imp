@@ -1,5 +1,7 @@
 from django.db import models
 from django.core.exceptions import ValidationError
+from django.core.cache import cache
+from django.core.cache.utils import make_template_fragment_key
 
 from wagtail.contrib.settings.models import BaseSetting, register_setting
 from wagtail.admin.edit_handlers import FieldPanel, PageChooserPanel
@@ -43,6 +45,12 @@ class FooterCTASettings(BaseSetting):
         FieldPanel('button_text')
     ]
 
+    def save(self, *args, **kwargs):
+
+        key = make_template_fragment_key('footer_cta_settings')
+        cache.delete(key)
+        return super().save(*args, **kwargs)
+
     def clean(self):
 
         if self.button_internal_page and self.button_external_page:
@@ -82,6 +90,12 @@ class ContactSettings(BaseSetting):
         FieldPanel('contact_email')
     ]
 
+def save(self, *args, **kwargs):
+
+        key = make_template_fragment_key('footer_contact_settings')
+        cache.delete(key)
+        return super().save(*args, **kwargs)
+
 
 @register_setting
 class ServiceAreaSettings(BaseSetting):
@@ -119,3 +133,9 @@ class SocialMediaSettings(BaseSetting):
         blank=True,
         help_text='Enter Company LinkedIn URL'
     )
+
+    def save(self, *args, **kwargs):
+
+        key = make_template_fragment_key('footer_social_settings')
+        cache.delete(key)
+        return super().save(*args, **kwargs)

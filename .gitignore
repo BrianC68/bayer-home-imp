@@ -3,6 +3,7 @@
 ##############################
 .vscode/
 bayer/settings/production.py
+bayer/settings/dev.py
 Dockerfile
 media/
 manage.py

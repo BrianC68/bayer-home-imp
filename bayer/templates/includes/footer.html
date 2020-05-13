@@ -1,6 +1,7 @@
-{% load static menu_tags wagtailcore_tags %}
+{% load static menu_tags wagtailcore_tags cache %}
 {% get_menu "header" as nav %}
 <!-- Start Call To Action -->
+{% cache 2592000 footer_cta_settings %}
 <section class="mt-lg-5 mt-0 footer-cta">
     <div class="container">
       <div class="row align-items-center">
@@ -20,6 +21,7 @@
       </div>
     </div>
 </section>
+{% endcache%}
 <!-- End Call To Action -->
 <!-- Start Footer -->
 <footer class="text-light text-md-left text-center footer">
@@ -27,28 +29,30 @@
       <div class="row mx-lg-n3">
         <div class="px-lg-3 py-3 col-lg-3 col-md-6 col-sm-6 text-center">
           <div class="footer-title pb-2">Links</div>
+            {% cache 2592000 site_footer %}
             {% for item in nav.menu_items.all %}
               <a class="d-block footer-link" href="{{ item.link }}" {% if item.open_in_new_tab %}target="_blank"{% endif %}>
                 {{ item.title }}
               </a>
             {% endfor %}
-            <!-- <hr class="w-100 bg-light d-block d-sm-none"> -->
+            {% endcache %}
         </div>
         <div class="px-lg-3 py-3 col-lg-3 col-md-6 col-sm-6 text-center">
             <div class="footer-title pb-2">Contact Us</div>
+            {% cache 2592000 footer_contact_settings %}
             {% with phone=settings.site_settings.ContactSettings.contact_phone email=settings.site_settings.ContactSettings.contact_email %}
             {% if phone %}<span style="font-size: 22px; color: #cccccc;">Phone:</span> <a href="tel:1-{{phone}}" class="footer-link">{{phone}}</a>{% endif %}<br />
             {% if email %}<span style="font-size: 22px; color: #cccccc;">Email:</span> <a href="mailto:{{email}}" class="footer-link">Brandon Bayer</a>{% endif %}
             {% endwith %}
-            <!-- <hr class="w-100 bg-light d-block d-sm-none"> -->
+            {% endcache %}
         </div>
         <div class="px-lg-3 py-3 col-lg-3 col-md-6 col-sm-6 text-center">
             <div class="footer-title pb-2">Service Area</div>
             {% if settings.site_settings.ServiceAreaSettings.counties_served %}<span style="font-size: 22px; color: #cccccc">{{ settings.site_settings.ServiceAreaSettings.counties_served }}</span>{% endif %}
-            <!-- <hr class="w-100 bg-light d-block d-sm-none"> -->
         </div>
         <div class="px-lg-3 py-3 col-lg-3 col-md-6 col-sm-6 text-center">
               <div class="footer-title pb-2">Social Media</div>
+            {% cache 2592000 footer_social_settings %}
             {% if settings.site_settings.SocialMediaSettings.facebook %}
                 <a href="{{ settings.site_settings.SocialMediaSettings.facebook }}" class="footer-link mx-1">
                 <i class="fab fa-facebook-square fa-2x"></i><span class="sr-only">Company Facebook Page</span></a>{% endif %}
@@ -64,6 +68,7 @@
             {% if settings.site_settings.SocialMediaSettings.linkedin %}
                 <a href="{{ settings.site_settings.SocialMediaSettings.linkedin }}" class="footer-link mx-1">
                 <i class="fab fa-linkedin fa-2x"></i><span class="sr-only">Company LinkedIn Page</span></a>{% endif %}
+            {% endcache %}
         </div>
       </div>
       <div class="footer-copy">&copy; {% now "Y" %}

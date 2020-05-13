@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.cache import cache
+from django.core.cache.utils import make_template_fragment_key
 
 from wagtail.core.models import Page
 from wagtail.admin.edit_handlers import FieldPanel, PageChooserPanel
@@ -79,4 +81,10 @@ class ServicePage(Page):
         FieldPanel('button_text'),
         PageChooserPanel('internal_page')
     ]
+
+    def save(self, *args, **kwargs):
+
+        key = make_template_fragment_key('service_listing')
+        cache.delete(key)
+        return super().save(*args, **kwargs)
     

@@ -1,4 +1,4 @@
-{% load static menu_tags %}
+{% load static menu_tags cache %}
 {% get_menu 'header' as navigation %}
 <!-- Start Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -11,6 +11,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
+                {% cache 2592000 site_header %}
                 {% if settings.site_settings.SocialMediaSettings.facebook %}
                 <li class="nav-item text-center">
                     <a href="{{ settings.site_settings.SocialMediaSettings.facebook }}" class="nav-link">
@@ -23,6 +24,7 @@
                         {{item.title}}</a>
                 </li>
                 {% endfor %}
+                {% endcache %}
             </ul>
         </div>
     </div>

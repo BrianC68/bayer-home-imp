@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
-{% load wagtailimages_tags %}
+{% load wagtailimages_tags cache %}
 {% block breadcrumb %}
 {% include 'includes/breadcrumb.html' %}
 {% endblock breadcrumb %}
 {% block content %}
 <div><h2>{{page.subtitle}}</h2></div>
 <div class="row mt-4">
+    {% cache 2592000 service_listing %}
     {% for service in services %}
     <div class="col-md-6">
         <div class="card mb-3 text-center">
@@ -19,6 +20,7 @@
         </div>
     </div>
     {% endfor %}
+    {% endcache %}
 </div>
 {% endblock content %}
     
