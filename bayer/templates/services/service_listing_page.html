@@ -11,7 +11,11 @@
     <div class="col-md-6">
         <div class="card mb-3 text-center">
             {% image service.service_image fill-500x300 as card_img %}
-            <img src="{{card_img.url}}" class="card-img-top" alt="{{card_img.alt}}">
+            {% image service.service_image fill-500x300 format-webp as webp_card_img %}
+            <picture>
+                <source srcset="{{webp_card_img.url}}" type="image/webp">
+                <img src="{{card_img.url}}" class="card-img-top" alt="{{card_img.alt}}">
+            </picture>
             <div class="card-body">
             <h5 class="card-title">{{service.title}}</h5>
             <p class="card-text">{{service.card_description}}</p>

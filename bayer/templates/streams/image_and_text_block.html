@@ -1,4 +1,3 @@
-{% load static %}
 {% load wagtailcore_tags wagtailimages_tags %}
 <!-- Image and text block -->
 <div class="py-4">
@@ -6,8 +5,10 @@
         <div class="col-sm-12">
             <div>
                 <div class="text-{{self.image_alignment}}">
+                    {% image self.image fill-752x552 as img %}
+                    {% image self.image fill-752x552 format-webp as webp_img %}
                     <picture>
-                        {% image self.image fill-752x552 as img %}
+                        <source srcset="{{ webp_img.url }}" type="image/webp">
                         <img class="img-fluid" src="{{ img.url }}" alt="{{ img.alt }}">
                     </picture>
                 </div>

@@ -10,7 +10,11 @@
     <div class="col-md-6">
         <div class="card mb-3 text-center">
             {% image gallery.gallery_listing_page_image fill-500x300 as card_img %}
-            <img src="{{card_img.url}}" class="card-img-top" alt="{{card_img.alt}}">
+            {% image gallery.gallery_listing_page_image fill-500x300 format-webp as webp_card_img %}
+            <picture>
+                <source srcset="{{webp_card_img.url}}" type="image/webp">
+                <img src="{{card_img.url}}" class="card-img-top" alt="{{card_img.alt}}">
+            </picture>
             <div class="card-body">
             <h5 class="card-title">{{gallery.title}}</h5>
             <p class="card-text">{{gallery.gallery_description}}</p>
